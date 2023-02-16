@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style type="text/css">
+    .form-group {
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" style="background-color:#0d7963">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" style="height:80px; color: #fff;" href="#"><h3>Bank Website</h3></a>
+      </div>
+    </div>
+</nav>
+  <div class="container">
+    <h1 class="text-center">Form</h1>
+    <form action="{% url 'myapp:application' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="dob">DOB:</label>
+        <input type="date" class="form-control" id="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="age">AGE:</label>
+        <input type="number" class="form-control" id="age" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">GENDER:</label>
+        <select id="gender" class="form-control">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="phone">PHONE NUMBER:</label>
+        <input type="tel" class="form-control" id="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="email">MAIL ID:</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="address">ADDRESS:</label>
+        <textarea class="form-control" id="address" rows="3" required></textarea>
+      </div>
+       <div class="form-group">
+        <label for="district">District</label>
+        <select id="district" name="district" required>
+          <option value="">--Select Branch--</option>
+          <option value="Kasargod">Kasargod</option>
+          <option value="Kannur">Kannur</option>
+          <option value="ernakulam">Ernakulam</option>
+          <option value="thrissur">Thrissur</option>
+          <option value="Malappuram">Malappuram</option>
+        </select>
+      </div>
+        <div class="form-group">
+        <label for="branch">Branch</label>
+        <select id="branch" name="branch" required>
+          <option value="">--Select Branch--</option>
+            <optgroup label="Kasargod">
+            <option value="Kanhangad">Kanhangad</option>
+            <option value="Periya">Periya</option>
+          </optgroup>
+            <optgroup label="Kannur">
+            <option value="Payyannur">Payyannur</option>
+            <option value="Kottiyoor">Kottiyoor</option>
+          </optgroup>
+          <optgroup label="Ernakulam">
+            <option value="aluva">Aluva</option>
+            <option value="edapally">Edapally</option>
+          </optgroup>
+          <optgroup label="Thrissur">
+            <option value="kodungallur">Kodungallur</option>
+            <option value="guruvayur">Guruvayur</option>
+          </optgroup>
+          <optgroup label="Malappuram">
+            <option value="Thirur">Thirur</option>
+            <option value="Kuttippuram">Kuttippuram</option>
+          </optgroup>
+        </select>
+      </div>
+        <div class="form-group">
+        <label for="account-type">Account Type</label>
+        <select id="account-type" name="account-type" required>
+          <option value="">--Select Account Type--</option>
+          <option value="savings">Savings Account</option>
+          <option value="current">Current Account</option>
+          <option value="fixed-deposit">Fixed Deposit Account</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Materials Provided:</label><br>
+        <input type="checkbox" id="Debit Card"> Debit Card<br>
+        <input type="checkbox" id="Credit Card"> Credit Card<br>
+        <input type="checkbox" id="Check Book"> Check Book
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary" >Submit</button>
+        <a class="btn btn-dark" href="{% url 'myapp:logout' %}">Logout</a>
+<!--        <button type="button" class="btn btn-dark" href="{% url 'myapp:home' %}">Logout</button>-->
+<!--        <button type="button" class="btn btn-secondary" href="logout/">Logout</button>-->
+      </div>
+    </form>
+    </div>
+  </div>
+</body>
+</html>
+
+

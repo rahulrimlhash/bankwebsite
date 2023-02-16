@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Application Accepted</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        margin-top: 50px;
+      }
+      .jumbotron {
+        background-color: #5cb85c;
+        color: #fff;
+      }
+      .btn {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+      }
+      .btn:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center">
+        <h1>Your Application is Accepted</h1>
+        <p>Congratulations! You have been accepted for the program.</p>
+        <button class="btn btn-lg" onclick="window.location.href='{% url 'myapp:home' %}'">Go to Home</button>
+      </div>
+    </div>
+  </body>
+</html>

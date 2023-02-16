@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #0d7963;
+    }
+    .form-container {
+      margin-top: 50px;
+      max-width: 500px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      margin: 0 auto;
+      box-shadow: 0px 2px 10px rgba(0,0,0,0.3);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .submit-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .submit-button input {
+      background-color: #81b29a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .logout-button {
+      display: inline-block;
+      margin-top: 20px;
+      color: #81b29a;
+    }
+    .logout-button:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+        <small>Enter your full name</small>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob">
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="1" max="120">
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <div>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label>
+        </div>
+        <div>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+        </div>
+        <div>
+          <input type="radio" id="other" name="gender" value="other">
+          <label for="other">Other</label>
+        </div>
+      </div>
+      <div class="form-group">
+                <small>Enter your 10 digit phone number</small>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="district">District</label>
+        <select id="district" name="district">
+          <option value="Kasargod">Kasargod</option>
+          <option value="Kannur">Kannur</option>
+          <option value="ernakulam">Ernakulam</option>
+          <option value="thrissur">Thrissur</option>
+          <option value="Malappuram">Malappuram</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="branch">Branch</label>
+        <select id="branch" name="branch">
+          <option value="">--Select Branch--</option>
+            <optgroup label="Kasargod">
+            <option value="Kanhangad">Kanhangad</option>
+            <option value="Periya">Periya</option>
+          </optgroup>
+            <optgroup label="Kannur">
+            <option value="Payyannur">Payyannur</option>
+            <option value="Kottiyoor">Kottiyoor</option>
+          </optgroup>
+          <optgroup label="Ernakulam">
+            <option value="aluva">Aluva</option>
+            <option value="edapally">Edapally</option>
+          </optgroup>
+          <optgroup label="Thrissur">
+            <option value="kodungallur">Kodungallur</option>
+            <option value="guruvayur">Guruvayur</option>
+          </optgroup>
+          <optgroup label="Malappuram">
+            <option value="Thirur">Thirur</option>
+            <option value="Kuttippuram">Kuttippuram</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="account-type">Account Type</label>
+        <select id="account-type" name="account-type">
+          <option value="">--Select Account Type--</option>
+          <option value="savings">Savings Account</option>
+          <option value="current">Current Account</option>
+          <option value="fixed-deposit">Fixed Deposit Account</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Materials Provided</label>
+        <div>
+          <input type="checkbox" id="debit-card" name="materials-provided[]" value="debit-card">
+          <label for="debit-card">Debit Card</label>
+        </div>
+        <div>
+          <input type="checkbox" id="credit-card" name="materials-provided[]" value="credit-card">
+          <label for="credit-card">Credit Card</label>
+        </div>
+        <div>
+          <input type="checkbox" id="cheque-book" name="materials-provided[]" value="cheque-book">
+          <label for="cheque-book">Cheque Book</label>
+        </div>
+      </div>
+      <div class="submit-button">
+<!--        <input type="submit" value="Submit"onclick="showMessage">-->
+      <button type="button" class="btn btn-primary" onclick="showMessage()">Submit</button>
+
+      </div>
+    </form>
+    <div class="logout-button">
+      <a href="#">Logout</a>
+    </div>
+  </div>
+   <script>
+      function showMessage() {
+        alert("Application accepted");
+      }
+    </script>
+</body>
+</html>
